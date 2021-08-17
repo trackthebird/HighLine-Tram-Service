@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.highline.tramservice.viewmodel.MyTramViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar_layout"
+            layout="@layout/toolbar"
+            app:onClearClick="@{viewModel.onClickClearLiveData}"
+            app:onRefreshClick="@{viewModel.onClickRefreshLiveData}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/layout_padding_start"
+            android:paddingEnd="@dimen/layout_padding_end"
+            tools:context=".ui.RouteInfoFragment">
+
+            <TextView
+                android:id="@+id/id_textview_highline_tram_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                style="@style/TextViewStyleBold"
+                android:gravity="center"
+                android:text="@string/highline_tram_service"
+                android:fontFamily="@font/lora_medium"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/id_textview_for_employees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextViewStyleItalic"
+                android:gravity="center"
+                android:text="@string/for_train_lovers_only"
+                android:fontFamily="@font/lora_medium_italic"
+                app:layout_constraintTop_toBottomOf="@+id/id_textview_highline_tram_service"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/id_textview_north_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                style="@style/TextViewStyleBold"
+                android:text="@string/north"
+                android:fontFamily="@font/lora_medium_italic"
+                app:layout_constraintTop_toBottomOf="@+id/id_textview_for_employees"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/id_recycler_north_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:clipToPadding="false"
+                android:background="@drawable/border"
+                android:paddingBottom="2dp"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_textview_north_title" />
+
+            <TextView
+                android:id="@+id/id_textview_south_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                style="@style/TextViewStyleBold"
+                android:text="@string/south"
+                android:fontFamily="@font/lora_medium_italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_recycler_north_route" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/id_recycler_south_route"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:clipToPadding="false"
+                android:paddingBottom="2dp"
+                android:background="@drawable/border"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/id_textview_south_title" />
+
+            <ProgressBar
+                android:id="@+id/id_progressbar"
+                style="?android:spinnerStyle"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@color/clearColor"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/progressbar_gradient"
+                android:indeterminateTintMode="src_atop"
+                android:visibility="gone"
+                android:layout_marginBottom="24dp"
+                android:fitsSystemWindows="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">HighLine Tram</string>
+    <string name="highline_tram_service">HighLine - Tram Service</string>
+    <string name="highline_tram_service_new">HighLine Tram Service</string>
+    <string name="for_train_lovers_only"><u>For Train Lovers Only</u></string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_my_tram_home">My Tram Home page</string>
+    <string name="title">Title</string>
+    <string name="north">North Line</string>
+    <string name="south">South Line</string>
+    <string name="reload">Reload</string>
+    <string name="clear_time">Clear Time</string>
+    <string name="time">10:10 AM</string>
+    <string name="destination">Destination</string>
+
+    <!-- Error Messages -->
+    <string name="error_message_empty_device_token">Empty Device Token!. Try again later</string>
+    <string name="error_message_no_internet_connection">No Internet connection. Please try again later</string>
+
+    <!--Toast Messages-->
+    <string name="clear_message">Information cleared successfully</string>
+    <string name="refresh_message">Reloaded successfully</string>
+    <string name="message_please_refresh">Please Refresh again!</string>
+
+</resources>
